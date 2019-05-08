@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: samplepod
+  annotations:
+    k8s.v1.cni.cncf.io/networks: '[{ "name": "macvlan-conf"}]'
+spec:
+  containers:
+  - name: samplepod
+    image: quay.io/schseba/kubemacpool-test:latest
+    imagePullPolicy: "IfNotPresent"
